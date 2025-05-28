@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>Register - Pet Grooming</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -18,6 +18,7 @@
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3">
           <div class="flex items-center gap-4 text-[#0d141c]">
+            <a href="landing_page.html" class="flex items-center gap-4 text-[#0d141c]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -33,24 +34,37 @@
               </svg>
             </div>
             <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">Pet Grooming</h2>
+            </a>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
+          <div class="flex flex-1 justify-end gap-8" id="auth-links-container">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Services</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Gallery</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Contact</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#home-section">Home</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#services-section">Services</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#gallery-section">Gallery</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#contact-section">Contact</a>
+              <a id="profile-link-nav" class="text-[#0d141c] text-sm font-medium leading-normal" href="profile.html" style="display: none;">Profilo</a>
             </div>
-            <button
+            <a id="login-link-nav" href="login.html"
               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
             >
               <span class="truncate">Log In</span>
+            </a>
+            <a id="register-link-nav" href="registrazione.html"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-indigo-600 text-white text-sm font-bold leading-normal tracking-[0.015em]" style="display: none;"
+            >
+              <span class="truncate">Registrati</span>
+            </a>
+            <button id="logout-link-nav" onclick="handleLogout()"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-red-500 text-white text-sm font-bold leading-normal tracking-[0.015em]" style="display: none;"
+            >
+              <span class="truncate">Esci</span>
             </button>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
             <h2 class="text-[#0d141c] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Create an Account</h2>
+            <p id="message-area" class="text-center py-2"></p>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
                 <input
@@ -112,10 +126,12 @@
                 <span class="truncate">Sign Up</span>
               </button>
             </div>
-            <p class="text-[#49739c] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline">Already have an account? Log In</p>
+            <p class="text-[#49739c] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">Already have an account? <a href="login.html" class="underline hover:text-indigo-600">Log In</a></p>
           </div>
         </div>
       </div>
     </div>
+    <script src="js/common.js"></script>
+    <script src="js/registration.js"></script>
   </body>
 </html>

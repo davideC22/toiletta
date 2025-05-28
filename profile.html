@@ -5,16 +5,16 @@
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>My Profile - Dog Grooming</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col w-80">
@@ -23,15 +23,16 @@
                 <div class="flex gap-3">
                   <div
                     class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbET5qnRbOiRk8OyRTQdT4o3TA08EfemzsbzhNOFqxQJWh8JuSY8_AWtbLDnalbt__awoYRmeZfGVbUJB_8q0NcoTjg7xHVyZxY-qdXkb7XcHq9DvOJ-aOnzvP2_PFsl7zTONf4KX6FtflZw1eIf1iYuAK5TD0gqgmraJnCV-vEyXdf5xysfC6m2Bi9smI8_P0GCmYIJ1xVI9lpG2hh44qdgD25b3NoY587tB8TIneBeg_UiGlyqiYsZK7grzkoji53GQ8G-8tN0gv");'
+                    id="profile-avatar-sidebar"
+                    style='background-image: url("https://via.placeholder.com/40/007bff/ffffff?text=U");' 
                   ></div>
                   <div class="flex flex-col">
-                    <h1 class="text-[#111518] text-base font-medium leading-normal">Sophia</h1>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Visualizza profilo</p>
+                    <h1 class="text-[#111518] text-base font-medium leading-normal" id="profile-fullname-sidebar">User Name</h1>
+                    <a href="profile.html" class="text-[#637988] text-sm font-normal leading-normal hover:underline">Visualizza profilo</a>
                   </div>
                 </div>
                 <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-3 px-3 py-2">
+                  <a href="landing_page.html" class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-md">
                     <div class="text-[#111518]" data-icon="House" data-size="24px" data-weight="regular">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                         <path
@@ -40,18 +41,8 @@
                       </svg>
                     </div>
                     <p class="text-[#111518] text-sm font-medium leading-normal">Home</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#111518]" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#111518] text-sm font-medium leading-normal">Cerca</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
+                  </a>
+                  <a href="calprenotazione.html" class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-md">
                     <div class="text-[#111518]" data-icon="Calendar" data-size="24px" data-weight="regular">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                         <path
@@ -59,18 +50,8 @@
                         ></path>
                       </svg>
                     </div>
-                    <p class="text-[#111518] text-sm font-medium leading-normal">Prenotazioni</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#111518]" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#111518] text-sm font-medium leading-normal">Messaggi</p>
-                  </div>
+                    <p class="text-[#111518] text-sm font-medium leading-normal">Le Mie Prenotazioni</p>
+                  </a>
                   <div class="flex items-center gap-3 px-3 py-2 rounded-xl bg-[#f0f3f4]">
                     <div class="text-[#111518]" data-icon="User" data-size="24px" data-weight="fill">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -79,14 +60,21 @@
                         ></path>
                       </svg>
                     </div>
-                    <p class="text-[#111518] text-sm font-medium leading-normal">Profilo</p>
+                    <p class="text-[#111518] text-sm font-medium leading-normal">Il Mio Profilo</p>
                   </div>
+                   <!-- Container for logout button -->
+                  <div id="profile-sidebar-logout" class="mt-2"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111518] tracking-light text-[32px] font-bold leading-tight min-w-72">Cani</p></div>
+             <div class="flex flex-wrap justify-between items-center gap-3 p-4">
+                <p class="text-[#111518] tracking-light text-[32px] font-bold leading-tight min-w-72">I Miei Cani</p>
+                <button id="add-dog-button" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg text-sm">Aggiungi Cane</button>
+            </div>
+            <p id="profile-message-area" class="text-center py-2 text-sm"></p>
+            <div id="dog-list-container">
             <div class="p-4">
               <div class="flex items-stretch justify-between gap-4 rounded-xl">
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">

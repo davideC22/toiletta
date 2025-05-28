@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>Pet Grooming - Welcome</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -17,7 +17,7 @@
     <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#0d141c]">
+          <a href="landing_page.html" class="flex items-center gap-4 text-[#0d141c]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -33,19 +33,24 @@
               </svg>
             </div>
             <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">Pet Grooming</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
+          </a>
+          <div class="flex flex-1 justify-end gap-8" id="auth-links-container">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Services</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Pricing</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Gallery</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Testimonials</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#services-section">Services</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#pricing-section">Pricing</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#gallery-section">Gallery</a>
+              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#testimonials-section">Testimonials</a>
+              <a id="profile-link-nav" class="text-[#0d141c] text-sm font-medium leading-normal" href="profile.html" style="display: none;">Profilo</a>
             </div>
-            <button
+            <!-- Auth links will be injected here by js/common.js -->
+            <div id="auth-links" class="flex items-center gap-2">
+                 <!-- Default: "Accedi" and "Registrati" -->
+            </div>
+             <a href="calprenotazione.html"
               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
             >
               <span class="truncate">Book Now</span>
-            </button>
+            </a>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
@@ -55,6 +60,7 @@
                 <div
                   class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
                   style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbYDUMbgPRpKMhQSAcd2_ZdZDde9Y85cXY-XIS_4OrlTKF78QkBuVKkDX-EdmWwGS6n6ptO0VwO9QEI42BRKpCXKl876tm6n0NyRcABxC6cI4RW2PehplE8pFavkGNKhrZts25eAeckMkQD0w-bM7IZaiPLuShE-Ojw_yXgj2RK_QnV1qXtHIqdVUh7X7QIqitYfaKQsaCmce8CDYfIHjbqgQWh93eiYYQlDJLY9LKEGG0qYnFXw8IYquBSCJDlMxIrB1FXaMTZWUK");'
+                  id="home-section"
                 >
                   <div class="flex flex-col gap-2 text-center">
                     <h1
@@ -66,15 +72,15 @@
                       Give your furry friend the care they deserve. Our professional groomers provide top-notch services in a comfortable and safe environment.
                     </h2>
                   </div>
-                  <button
+                  <a href="prenotazione.html"
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
                     <span class="truncate">Book Now</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
+            <div class="flex flex-col gap-10 px-4 py-10 @container" id="services-section">
               <div class="flex flex-col gap-4">
                 <h1
                   class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
@@ -85,7 +91,8 @@
                   We offer a wide range of grooming services to meet your pet's needs, from basic baths to full grooming packages.
                 </p>
               </div>
-              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0" id="services-cards">
+                <!-- Service cards will be dynamically populated here or remain static -->
                 <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-slate-50 p-4 flex-col">
                   <div class="text-[#0d141c]" data-icon="Scissors" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -127,7 +134,7 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pricing</h2>
+            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" id="pricing-section">Pricing</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(228px,1fr))] gap-2.5 px-4 py-3 @3xl:grid-cols-4">
               <div class="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#cedbe8] bg-slate-50 p-6">
                 <div class="flex flex-col gap-1">
@@ -137,11 +144,11 @@
                     <span class="text-[#0d141c] text-base font-bold leading-tight">per pet</span>
                   </p>
                 </div>
-                <button
+                <a href="prenotazione.html?service=basic"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Book Now</span>
-                </button>
+                </a>
                 <div class="flex flex-col gap-2">
                   <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0d141c]">
                     <div class="text-[#0d141c]" data-icon="Check" data-size="20px" data-weight="regular">
@@ -177,11 +184,11 @@
                     <span class="text-[#0d141c] text-base font-bold leading-tight">per pet</span>
                   </p>
                 </div>
-                <button
+                <a href="prenotazione.html?service=standard"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Book Now</span>
-                </button>
+                </a>
                 <div class="flex flex-col gap-2">
                   <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0d141c]">
                     <div class="text-[#0d141c]" data-icon="Check" data-size="20px" data-weight="regular">
@@ -225,11 +232,11 @@
                     <span class="text-[#0d141c] text-base font-bold leading-tight">per pet</span>
                   </p>
                 </div>
-                <button
+                <a href="prenotazione.html?service=premium"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Book Now</span>
-                </button>
+                </a>
                 <div class="flex flex-col gap-2">
                   <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0d141c]">
                     <div class="text-[#0d141c]" data-icon="Check" data-size="20px" data-weight="regular">
@@ -274,7 +281,7 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Gallery</h2>
+            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" id="gallery-section">Gallery</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3">
                 <div
@@ -313,7 +320,7 @@
                 ></div>
               </div>
             </div>
-            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Testimonials</h2>
+            <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" id="testimonials-section">Testimonials</h2>
             <div class="flex flex-col gap-8 overflow-x-hidden bg-slate-50 p-4">
               <div class="flex flex-col gap-3 bg-slate-50">
                 <div class="flex items-center gap-3">
@@ -552,11 +559,11 @@
                 </div>
                 <div class="flex flex-1 justify-center">
                   <div class="flex justify-center">
-                    <button
+                    <a href="prenotazione.html"
                       class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
                     >
                       <span class="truncate">Book Now</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -572,8 +579,8 @@
                 <a class="text-[#49739c] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
                 <a class="text-[#49739c] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
               </div>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="#">
+              <div class="flex flex-wrap justify-center gap-4" id="contact-section">
+                <a href="#" aria-label="Twitter">
                   <div class="text-[#49739c]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
@@ -582,7 +589,7 @@
                     </svg>
                   </div>
                 </a>
-                <a href="#">
+                <a href="#" aria-label="Instagram">
                   <div class="text-[#49739c]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
@@ -591,7 +598,7 @@
                     </svg>
                   </div>
                 </a>
-                <a href="#">
+                <a href="#" aria-label="Facebook">
                   <div class="text-[#49739c]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
@@ -601,11 +608,12 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#49739c] text-base font-normal leading-normal">@2024 Pet Grooming. All rights reserved.</p>
+              <p class="text-[#49739c] text-base font-normal leading-normal">©2024 Pet Grooming. All rights reserved.</p>
             </footer>
           </div>
         </footer>
       </div>
     </div>
+    <script src="js/common.js"></script>
   </body>
 </html>

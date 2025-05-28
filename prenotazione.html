@@ -5,19 +5,19 @@
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>Book Appointment - Toelettatura Cani</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f3f4] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#111518]">
+          <a href="landing_page.html" class="flex items-center gap-4 text-[#111518]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -35,16 +35,18 @@
               </svg>
             </div>
             <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em]">Toelettatura Cani</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
+          </a>
+          <div class="flex flex-1 justify-end items-center gap-4" id="auth-links-container">
             <div class="flex items-center gap-9">
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Prenota</a>
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Servizi</a>
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Chi Siamo</a>
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Contatti</a>
+              <a class="text-[#111518] text-sm font-medium leading-normal" href="calprenotazione.html">Prenota</a>
+              <a class="text-[#111518] text-sm font-medium leading-normal" href="landing_page.html#services-section">Servizi</a>
+              <a class="text-[#111518] text-sm font-medium leading-normal" href="landing_page.html#about-us-section">Chi Siamo</a> <!-- Assuming about-us section exists -->
+              <a class="text-[#111518] text-sm font-medium leading-normal" href="landing_page.html#contact-section">Contatti</a>
+              <a id="profile-link-nav" class="text-[#111518] text-sm font-medium leading-normal" href="profile.html" style="display: none;">Profilo</a>
             </div>
-            <button
+            <a href="calprenotazione.html"
               class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f3f4] text-[#111518] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              aria-label="Notifications"
             >
               <div class="text-[#111518]" data-icon="Bell" data-size="20px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
@@ -53,98 +55,114 @@
                   ></path>
                 </svg>
               </div>
-            </button>
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAU6Eam_hBNqFwCcS7EPwEAgJ2VZTaIbQik8xQyFoKRDFnGo22QTLifIsin6ell-UxkQQwcy8vrCLk4gNmlKgN5Kvb4veH2MQOQzPpQnaUw1WLHXK08ODvtFii3CM6uvWp_HeRiSF5fSSxK3J86GOWVxY0zmWJa5AsPPXYYCQ7MjkU4__8sY5EodrsZdzijtuHzGD25Im258T61GBfjY1mreQJRXePdIrF9991uCXRuOYlXS1BsyAARRj9Lq3Ij74mG3vhkKFAhe3t");'
-            ></div>
+            </a>
+            <div id="user-avatar-section" class="relative ml-3">
+                <div>
+                    <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-10 w-10 rounded-full" id="avatar-img" src="https://via.placeholder.com/40/cccccc/ffffff?text=G" alt="User Avatar">
+                    </button>
+                </div>
+                <div id="user-menu" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                    <!-- Links will be injected here by common.js -->
+                </div>
+            </div>
           </div>
         </header>
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
+          <div id="service-selection-panel" class="layout-content-container flex flex-col w-80">
             <h3 class="text-[#111518] tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">Prenota un appuntamento</h3>
-            <div class="p-4">
+            <div class="p-4 service-item">
               <div class="flex items-stretch justify-between gap-4 rounded-xl">
                 <div class="flex flex-[2_2_0px] flex-col gap-4">
                   <div class="flex flex-col gap-1">
-                    <p class="text-[#111518] text-base font-bold leading-tight">Bagno</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Servizio di toelettatura completo</p>
+                    <p class="text-[#111518] text-base font-bold leading-tight service-name">Bagno</p>
+                    <p class="text-[#637988] text-sm font-normal leading-normal service-description">Servizio di toelettatura completo</p>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    class="select-service-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    data-service-id="1" data-service-name="Bagno"
                   >
                     <span class="truncate">Seleziona</span>
                   </button>
                 </div>
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 service-image"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHXcYaO3MiKGhjBvVuyeejEfC-fKLcy4pUSp0qN1JPNU3fDczU26Cp1weFJ3Nd9zOZNUqewR9YqwE0CiG_TyCp766VQCkOLoi9x2Ldc1vsAmB4MOSNDVST5xCpXWsSsiWe4A4QhYABsG1w_jZl7SQkUd3x8YE6t071XUsY1mJ-MjHZ6WG23h-e5e4z8-sol2rxiu6RLJy_RcO6OIHErpipjxPRJXwGLAI1fOno8FUt1Ck3ZHx9uTHxClS78vZAU2eYdCQrUFTKyNX2");'
                 ></div>
               </div>
             </div>
-            <div class="p-4">
+            <div class="p-4 service-item">
               <div class="flex items-stretch justify-between gap-4 rounded-xl">
                 <div class="flex flex-[2_2_0px] flex-col gap-4">
                   <div class="flex flex-col gap-1">
-                    <p class="text-[#111518] text-base font-bold leading-tight">Taglio</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Taglio personalizzato per il tuo cane</p>
+                    <p class="text-[#111518] text-base font-bold leading-tight service-name">Taglio</p>
+                    <p class="text-[#637988] text-sm font-normal leading-normal service-description">Taglio personalizzato per il tuo cane</p>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    class="select-service-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                     data-service-id="2" data-service-name="Taglio"
                   >
                     <span class="truncate">Seleziona</span>
                   </button>
                 </div>
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 service-image"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7X1_-c_eWFd5o-hpna8vt8dm3brqYszxbEcf1K2BlbkIk3XPGnDvqD-lvf8brvtIwnUW5TdG_Tw8uW9LkmR5Puk8K62VCqFGHE65E89L2qzq5wq2hpibuvEnv8P9e7lmpr4uN_sAk9eJbBQJ4eE3OdebvZCIkrIX5N0QbPlMSpgtu7CgY7oxeIXXBJKxaxEhrlVKK94p5IVGTZyrZ-xXSloh9XYl6v8qWSCPi0SPSzKA3uFuMbWfU1alxrBXY9hVtIzOYc6FfCZXn");'
                 ></div>
               </div>
             </div>
-            <div class="p-4">
+            <div class="p-4 service-item">
               <div class="flex items-stretch justify-between gap-4 rounded-xl">
                 <div class="flex flex-[2_2_0px] flex-col gap-4">
                   <div class="flex flex-col gap-1">
-                    <p class="text-[#111518] text-base font-bold leading-tight">Toelettatura Completa</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Bagno e taglio combinati</p>
+                    <p class="text-[#111518] text-base font-bold leading-tight service-name">Toelettatura Completa</p>
+                    <p class="text-[#637988] text-sm font-normal leading-normal service-description">Bagno e taglio combinati</p>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    class="select-service-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    data-service-id="3" data-service-name="Toelettatura Completa"
                   >
                     <span class="truncate">Seleziona</span>
                   </button>
                 </div>
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 service-image"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_iZ7wm_QLGynzC2VJ03UyzwBiYTKNUZJMgCgK8JlqW3pAlrrO760ydOE6MDWAIRfqIwNpxEHVi4wp88A8h2Gc7TCyCForTMTM48nL4yZKbBa_uYdeLaqbcll_nkmfm49QGHJFoQsp3WQlJ-dkxUfPA6T2o--W0D8y-GgCnBVrgK9Rwl_BRi__Hy0bEeE63RzXh7GkRhvDhzY5A9bhplCJrGkNLu0_aVnLIpb8ORMjPL7z00v5xpLeSpc3XC43J73WwO1Rtt8jXVeJ");'
                 ></div>
               </div>
             </div>
-            <div class="p-4">
+            <div class="p-4 service-item">
               <div class="flex items-stretch justify-between gap-4 rounded-xl">
                 <div class="flex flex-[2_2_0px] flex-col gap-4">
                   <div class="flex flex-col gap-1">
-                    <p class="text-[#111518] text-base font-bold leading-tight">Extra</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Servizi aggiuntivi come pulizia denti</p>
+                    <p class="text-[#111518] text-base font-bold leading-tight service-name">Extra</p>
+                    <p class="text-[#637988] text-sm font-normal leading-normal service-description">Servizi aggiuntivi come pulizia denti</p>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    class="select-service-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f0f3f4] text-[#111518] text-sm font-medium leading-normal w-fit"
+                    data-service-id="4" data-service-name="Extra"
                   >
                     <span class="truncate">Seleziona</span>
                   </button>
                 </div>
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 service-image"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_Ho3MK1o2nplg-wGF3b0psavQlBZZnbBuIHqzlR6eH27cG3QKIU8L7P_eYlGNKklaIP1dWA4Xdlsb3kZ2EIKcBE7v0-LXCKpLc3tjqO-QPqAPPj1QF8zjHyI95YNAi3dvy4HBJnhROJnEPrApS-oBmd-VzNc49gallomxWhQsHPI-SLWKKXqBNHMxditkl6h4R9WEQ0z0LCTr8J2ipDqyvbPfifp2jcAgnwXg9OH3BCQCG7pDsKkpt2n5s0W_pbo-GkO1Lk6eucJ-");'
                 ></div>
               </div>
             </div>
-            <div class="flex px-4 py-3">
+            <!-- Cerca button might be removed or repurposed if service selection directly triggers next steps -->
+            <!-- <div class="flex px-4 py-3">
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#1993e5] text-white text-sm font-bold leading-normal tracking-[0.015em]"
               >
                 <span class="truncate">Cerca</span>
               </button>
+            </div> -->
+             <div id="dog-selection-container" class="p-4">
+                <!-- Dog selection dropdown will be populated here by booking.js -->
             </div>
           </div>
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
