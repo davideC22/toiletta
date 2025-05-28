@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>My Appointments - Doggy Spa</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -17,7 +17,7 @@
     <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#0d141c]">
+          <a href="landing_page.html" class="flex items-center gap-4 text-[#0d141c]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -33,15 +33,17 @@
               </svg>
             </div>
             <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">Doggy Spa</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
+          </a>
+          <div class="flex flex-1 justify-end items-center gap-4" id="auth-links-container">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Services</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Gallery</a>
-              <a class="text-[#0d141c] text-sm font-medium leading-normal" href="#">Contact</a>
+                <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#home-section">Home</a>
+                <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#services-section">Services</a>
+                <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#gallery-section">Gallery</a>
+                <a class="text-[#0d141c] text-sm font-medium leading-normal" href="landing_page.html#contact-section">Contact</a>
+                <a id="profile-link-nav" class="text-[#0d141c] text-sm font-medium leading-normal" href="profile.html" style="display: none;">Profilo</a>
             </div>
-            <button
+            <!-- Notification Bell -->
+            <a href="calprenotazione.html"
               class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e7edf4] text-[#0d141c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
             >
               <div class="text-[#0d141c]" data-icon="Bell" data-size="20px" data-weight="regular">
@@ -51,16 +53,31 @@
                   ></path>
                 </svg>
               </div>
-            </button>
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7ABVyal4B9oF3z8Qw7XvUVuJ6bLPbjntKQf1j81LgnP3s3ID9l7PN4lZBbeaM3yOsfkF2Jd5xWmSN9POJAwUTDRp0DPMYFj3BEXoOtOqBJhXRzn675ZValvLGg3tHIJwenr-wqziOANaojaWhALa9Ega4Z9FyT2f5rKU_PNWcB93sxYstVo7uJXcSTZLsWMozMuxE6dtXAXwR0PbWKkydtinlGtmzJSB508tWuHZioNhq7-nk_ybLbDIIC0ekr3ELB3V0p92MwRb6");'
-            ></div>
+            </a>
+             <!-- User Avatar and Auth Links -->
+            <div id="user-avatar-section" class="relative ml-3">
+                <div>
+                    <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-10 w-10 rounded-full" id="avatar-img" src="https://via.placeholder.com/40/cccccc/ffffff?text=G" alt="User Avatar">
+                    </button>
+                </div>
+                <!-- Dropdown menu, show/hide based on menu state. -->
+                <div id="user-menu" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                    <!-- Active: "bg-gray-100", Not Active: "" -->
+                    <!-- Links will be injected here by common.js -->
+                </div>
+            </div>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight min-w-72">My Appointments</p></div>
+            <div class="flex flex-wrap justify-between gap-3 p-4 items-center">
+                <p class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight min-w-72">My Appointments</p>
+                <a href="prenotazione.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg text-sm flex items-center">Book New Appointment</a>
+            </div>
+             <p id="appointments-message-area" class="text-center py-2 text-sm"></p>
             <div class="flex flex-wrap items-center justify-center gap-6 p-4">
               <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
                 <div class="flex items-center p-1 justify-between">
@@ -81,94 +98,94 @@
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">F</p>
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
-                  <button class="h-12 w-full text-[#0d141c] col-start-4 text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] col-start-4 text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">1</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">2</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">3</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">4</div>
                   </button>
-                  <button class="h-12 w-full text-slate-50 text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-slate-50 text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full bg-[#0c7ff2]">5</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">6</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">7</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">8</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">9</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">10</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">11</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">12</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">13</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">14</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">15</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">16</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">17</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">18</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">19</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">20</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">21</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">22</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">23</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">24</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">25</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">26</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">27</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">28</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">29</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">30</div>
                   </button>
                 </div>
@@ -192,132 +209,134 @@
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">F</p>
                   <p class="text-[#0d141c] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
-                  <button class="h-12 w-full text-[#0d141c] col-start-4 text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] col-start-4 text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">1</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">2</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">3</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">4</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">5</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">6</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">7</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">8</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">9</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">10</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">11</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">12</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">13</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">14</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">15</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">16</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">17</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">18</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">19</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">20</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">21</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">22</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">23</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">24</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">25</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">26</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">27</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">28</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">29</div>
                   </button>
-                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal">
+                  <button class="h-12 w-full text-[#0d141c] text-sm font-medium leading-normal calendar-day-button">
                     <div class="flex size-full items-center justify-center rounded-full">30</div>
                   </button>
                 </div>
               </div>
             </div>
             <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming Appointments</h2>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Full Grooming</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">July 15, 2024 · 10:00 AM</p>
-              </div>
-              <div class="shrink-0"><p class="text-[#0d141c] text-base font-normal leading-normal">$85</p></div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Bath and Brush</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">July 22, 2024 · 2:00 PM</p>
-              </div>
-              <div class="shrink-0"><p class="text-[#0d141c] text-base font-normal leading-normal">$50</p></div>
+            <div id="upcoming-appointments-list">
+            <!-- Appointments will be dynamically populated here -->
             </div>
             <h2 class="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Past Appointments</h2>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Full Grooming</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">June 10, 2024 · 11:00 AM</p>
-              </div>
-              <div class="shrink-0"><p class="text-[#0d141c] text-base font-normal leading-normal">$85</p></div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0d141c] text-base font-medium leading-normal line-clamp-1">Bath and Brush</p>
-                <p class="text-[#49739c] text-sm font-normal leading-normal line-clamp-2">May 18, 2024 · 3:00 PM</p>
-              </div>
-              <div class="shrink-0"><p class="text-[#0d141c] text-base font-normal leading-normal">$50</p></div>
+            <div id="past-appointments-list">
+            <!-- Past appointments will be dynamically populated here -->
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="js/common.js"></script>
+    <script src="js/appointments.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userMenu = document.getElementById('user-menu');
+
+            if (userMenuButton && userMenu) {
+                userMenuButton.addEventListener('click', () => {
+                    const isExpanded = userMenuButton.getAttribute('aria-expanded') === 'true';
+                    userMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    userMenu.classList.toggle('hidden');
+                });
+
+                // Optional: Close dropdown if clicked outside
+                document.addEventListener('click', (event) => {
+                    if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
+                        userMenuButton.setAttribute('aria-expanded', 'false');
+                        userMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
   </body>
 </html>
